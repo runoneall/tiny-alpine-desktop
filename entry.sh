@@ -7,11 +7,12 @@ fi
 
 echo "user:$USER_PASSWD" | chpasswd
 
-echo "exec icewm-session" > /home/user/.xsession
+echo "exec /usr/bin/icewm-session" > /home/user/.xsession
+chmod +x /home/user/.xsession
 chown user:user /home/user/.xsession
 
 mkdir -p /var/run/xrdp
 chown xrdp:xrdp /var/run/xrdp
 rm -rf /var/run/xrdp/*.pid
 
-/usr/bin/supervisord -c /etc/supervisord.conf
+exec /usr/bin/supervisord -c /etc/supervisord.conf
