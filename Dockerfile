@@ -14,9 +14,16 @@ RUN apk update && apk add --no-cache \
     xterm \
     bash \
     xrdp \
-    wqy-zenhei
+    wqy-zenhei \
+    sudo \
+    shadow \
+    xrandr \
+    arandr
 RUN chmod +x /entry.sh
-RUN adduser -D user
+RUN adduser -D user && \
+    adduser user wheel && \
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel-users && \
+    echo 'prog "Screen Layout" "video-display" arandr' > /etc/icewm/programs
 
 ENV DISPLAY :0
 ENV USER_PASSWD "user"
