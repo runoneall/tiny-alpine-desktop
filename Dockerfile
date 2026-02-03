@@ -25,7 +25,6 @@ RUN adduser -D user && \
     echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel-users
 
 ENV DISPLAY :0
-ENV USER_PASSWD "user"
 
 EXPOSE 3389
 
