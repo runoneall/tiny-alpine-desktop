@@ -22,8 +22,7 @@ RUN apk update && apk add --no-cache \
 RUN chmod +x /entry.sh
 RUN adduser -D user && \
     adduser user wheel && \
-    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel-users && \
-    echo 'prog "Screen Layout" "video-display" arandr' > /etc/icewm/programs
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel-users
 
 ENV DISPLAY :0
 ENV USER_PASSWD "user"
