@@ -6,7 +6,7 @@ if [ -z "${USER_PASSWD}" ]; then
   exit 1
 fi
 
-echo "root:$USER_PASSWD" | chpasswd
+passwd -d root
 x11vnc -storepasswd "$USER_PASSWD" /etc/x11vnc.pass
 
 /usr/bin/supervisord
