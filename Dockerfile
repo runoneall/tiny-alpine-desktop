@@ -11,7 +11,7 @@ RUN apk add --no-cache icewm xrdp sudo supervisor tigervnc
 
 # Configure xrdp
 COPY xrdp.ini /etc/xrdp/xrdp.ini
-RUN sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/xrdp/sesman.ini
+COPY sesman.ini /etc/xrdp/sesman.ini
 
 # Configure session
 COPY .xsession /home/user/.xsession
