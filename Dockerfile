@@ -8,7 +8,7 @@ ADD xrdp.ini /etc/xrdp/xrdp.ini
 ADD entry.sh /entry.sh
 
 RUN chmod +x /entry.sh
-RUN openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/xrdp/key.pem -out /etc/xrdp/cert.pem -days 365
+RUN openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/xrdp/key.pem -out /etc/xrdp/cert.pem -days 365 -subj "/C=US/ST=CA/L=San Francisco/O=MyOrg/OU=MyDept/CN=localhost"
 RUN chmod 600 /etc/xrdp/key.pem
 RUN chmod 600 /etc/xrdp/cert.pem
 
