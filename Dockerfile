@@ -19,9 +19,6 @@ RUN apk update && apk add --no-cache \
     shadow \
     xrandr
 RUN chmod +x /entry.sh
-RUN adduser -D user && \
-    adduser user wheel && \
-    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel-users
 
 ENV DISPLAY :0
 
