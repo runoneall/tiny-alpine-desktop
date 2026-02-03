@@ -13,8 +13,5 @@ echo "user:$USER_PASSWD" | chpasswd
 # Create the VNC password file for x11vnc server
 x11vnc -storepasswd "$USER_PASSWD" /etc/x11vnc.pass
 
-# Update xrdp.ini to use the same password for xrdp client
-sed -i "s/VNC_PASSWORD_PLACEHOLDER/$USER_PASSWD/g" /etc/xrdp/xrdp.ini
-
 # Start supervisord to manage all services
 /usr/bin/supervisord

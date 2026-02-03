@@ -17,8 +17,7 @@ RUN apk update && apk add --no-cache \
     wqy-zenhei \
     sudo \
     shadow \
-    xrandr \
-    arandr
+    xrandr
 RUN chmod +x /entry.sh
 RUN adduser -D user && \
     adduser user wheel && \
