@@ -8,11 +8,9 @@ RUN apk add --no-cache \
     x11vnc \
     icewm \
     xterm \
-    bash \
     xrdp \
-    sudo \
-    ttf-dejavu \
-    && chmod +x /daemon.sh /entry.sh
+    ttf-dejavu &&
+    chmod +x /daemon.sh /entry.sh
 
 ENV DISPLAY=:0
 

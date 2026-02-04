@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 launch() {
     local name=$1
