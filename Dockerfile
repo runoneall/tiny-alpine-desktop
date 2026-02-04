@@ -9,7 +9,7 @@ RUN apk add --no-cache \
     icewm \
     xterm \
     xrdp \
-    ttf-dejavu &&
+    ttf-dejavu && \
     chmod +x /daemon.sh /entry.sh
 
 ENV DISPLAY=:0
